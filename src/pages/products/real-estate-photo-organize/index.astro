@@ -1,0 +1,201 @@
+---
+import "@styles/global.css";
+
+const packages = [
+  {
+    name: "Basic",
+    price: "$50",
+    features: [
+      "Client renames photos",
+      "Automatic folder organization",
+      "MLS-ready structure",
+      "24h delivery"
+    ]
+  },
+  {
+    name: "Standard",
+    price: "$100",
+    badge: "Recommended for most",
+    features: [
+      "Raw photo upload",
+      "Manual renaming by me",
+      "Clean folder structure",
+      "Consistent filenames",
+      "24h delivery"
+    ],
+    highlight: true
+  },
+  {
+    name: "Premium",
+    price: "$150",
+    features: [
+      "Everything in Standard",
+      "Text watermark (bottom-right)",
+      "Auto image resizing",
+      "Web & MLS optimized",
+      "Priority handling"
+    ]
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fast Real Estate Photo Organization | Omar Hossam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<body class="bg-white text-gray-900 antialiased">
+
+<!-- HERO -->
+<section class="bg-gradient-to-b from-blue-50 to-white">
+  <div class="max-w-6xl mx-auto px-4 py-20 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+      Fast Real Estate Photo Organization
+    </h1>
+
+    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+      Send your property photos and receive a clean, MLS-ready folder within 24 hours.
+      No uploads to this site — just a Drive or ZIP link.
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/order?trial=true"
+        class="rounded-xl bg-green-600 px-8 py-4 font-semibold text-white hover:bg-green-700 transition"
+      >
+        Try It Free (10 Photos)
+      </a>
+
+      <a
+        href="/order"
+        class="rounded-xl border border-gray-300 px-8 py-4 font-semibold hover:bg-gray-100 transition"
+      >
+        Order Now
+      </a>
+    </div>
+
+    <p class="mt-4 text-sm text-gray-500">
+      No credit card • No commitment • Test quality first
+    </p>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="max-w-6xl mx-auto px-4 py-16">
+  <h2 class="text-3xl font-bold text-center mb-12">
+    Packages
+  </h2>
+
+  <div class="grid gap-8 md:grid-cols-3">
+    {packages.map(pkg => (
+      <article
+        class={`relative flex flex-col rounded-2xl border p-8 shadow-sm transition
+        ${pkg.highlight ? "border-blue-500 shadow-lg scale-[1.03]" : "border-gray-200"}
+        `}
+      >
+        {pkg.badge && (
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-sm font-semibold text-white">
+            {pkg.badge}
+          </span>
+        )}
+
+        <h3 class="text-xl font-bold mt-4">
+          {pkg.name}
+        </h3>
+
+        <p class="mt-2 text-4xl font-extrabold">
+          {pkg.price}
+        </p>
+
+        <ul class="mt-6 space-y-3 text-gray-700">
+          {pkg.features.map(f => (
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-green-500"></span>
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href="/order"
+          class={`mt-8 inline-flex justify-center rounded-xl px-6 py-3 font-semibold transition
+          ${pkg.highlight
+            ? "bg-blue-600 text-white hover:bg-blue-700"
+            : "bg-gray-900 text-white hover:bg-gray-800"}
+          `}
+        >
+          Choose {pkg.name}
+        </a>
+      </article>
+    ))}
+  </div>
+</section>
+
+<!-- APPLIES TO ALL -->
+<section class="bg-gray-50">
+  <div class="max-w-5xl mx-auto px-4 py-14">
+    <h3 class="text-2xl font-bold mb-6 text-center">
+      Applies to All Packages
+    </h3>
+
+    <ul class="grid gap-4 sm:grid-cols-2 text-gray-700">
+      <li>• Photos from one property only</li>
+      <li>• Original, unedited images</li>
+      <li>• Blurry or unrelated photos excluded</li>
+      <li>• One minor revision included</li>
+      <li>• Delivery within 24 hours after payment</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="max-w-5xl mx-auto px-4 py-16 text-center">
+  <h3 class="text-2xl font-bold mb-6">
+    Payment
+  </h3>
+
+  <p class="text-gray-600 mb-6">
+    50% upfront to start the work. Payment instructions are sent after order submission.
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-4 text-lg font-semibold">
+    <span class="rounded-lg border px-4 py-2">ACE Money</span>
+    <span class="rounded-lg border px-4 py-2">TapTapSend</span>
+    <span class="rounded-lg border px-4 py-2">Remitly</span>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<footer class="border-t">
+  <div class="max-w-6xl mx-auto px-4 py-12 text-center">
+    <h4 class="text-2xl font-bold">
+      Ready to organize your property photos?
+    </h4>
+
+    <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="/order"
+        class="rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition"
+      >
+        Order Now
+      </a>
+
+      <a
+        href="https://wa.me/YOUR_NUMBER"
+        class="rounded-xl border px-8 py-4 font-semibold hover:bg-gray-100 transition"
+      >
+        Contact via WhatsApp
+      </a>
+    </div>
+
+    <p class="mt-6 text-sm text-gray-500">
+      © {new Date().getFullYear()} Omar Hossam
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
