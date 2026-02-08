@@ -37,6 +37,9 @@ const packages = [
     ]
   }
 ];
+
+let orderURL = "/products/real-estate-photo-organize/order";
+let nameFormatsURL = "/products/real-estate-photo-organize/formats";
 ---
 
 <!DOCTYPE html>
@@ -63,14 +66,14 @@ const packages = [
 
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
       <a
-        href="/order?trial=true"
+        href={orderURL + "?trial=true"}
         class="rounded-xl bg-green-600 px-8 py-4 font-semibold text-white hover:bg-green-700 transition"
       >
         Try It Free (10 Photos)
       </a>
 
       <a
-        href="/order"
+        href={orderURL}
         class="rounded-xl border border-gray-300 px-8 py-4 font-semibold hover:bg-gray-100 transition"
       >
         Order Now
@@ -120,7 +123,7 @@ const packages = [
         </ul>
 
         <a
-          href="/order"
+          href={orderURL}
           class={`mt-8 inline-flex justify-center rounded-xl px-6 py-3 font-semibold transition
           ${pkg.highlight
             ? "bg-blue-600 text-white hover:bg-blue-700"
@@ -162,9 +165,9 @@ const packages = [
   </p>
 
   <div class="flex flex-wrap justify-center gap-4 text-lg font-semibold">
-    <span class="rounded-lg border px-4 py-2">ACE Money</span>
-    <span class="rounded-lg border px-4 py-2">TapTapSend</span>
-    <span class="rounded-lg border px-4 py-2">Remitly</span>
+    <a href="https://acemoneytransfer.com/" class="rounded-lg border px-4 py-2" target="_blank">ACE Money</a>
+    <a href="https://www.taptapsend.com/" class="rounded-lg border px-4 py-2" target="_blank">TapTapSend</a>
+    <a href="https://www.remitly.com/" class="rounded-lg border px-4 py-2" target="_blank">Remitly</a>
   </div>
 </section>
 
@@ -187,7 +190,7 @@ const packages = [
         href="https://wa.me/YOUR_NUMBER"
         class="rounded-xl border px-8 py-4 font-semibold hover:bg-gray-100 transition"
       >
-        Contact via WhatsApp
+        Contact via WhatsApp 
       </a>
     </div>
 
